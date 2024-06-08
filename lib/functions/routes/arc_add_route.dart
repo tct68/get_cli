@@ -16,7 +16,7 @@ void arcAddRoute(String nameRoute) {
   var routesFile = File(Structure.replaceAsExpected(path: 'lib/infrastructure/navigation/routes.dart'));
   var lines = <String>[];
   if (!routesFile.existsSync()) {
-    ArcRouteSample(nameRoute.snakeCase.toUpperCase()).create();
+    ArcRouteSample(nameRoute.snakeCase.camelCase).create();
     lines = routesFile.readAsLinesSync();
   } else {
     var content = formatterDartFile(routesFile.readAsStringSync());
